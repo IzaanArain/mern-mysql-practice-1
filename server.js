@@ -11,8 +11,8 @@ app.use(express.urlencoded({extended:true}));
 app.use("/post",require("./routes/postRoutes"));
 
 app.use((err,req,res,next) => {
-    console.log(err.stack);
     console.log(err.name);
+    console.log(err.code);
     console.log(err.stack);
     res.status(500).json({msg:"Something went rely wrong."})
 });
